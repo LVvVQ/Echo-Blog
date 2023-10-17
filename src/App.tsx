@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "@/pages/home";
+import Home from "@/pages/Home";
 import MarketingLayout from "./layouts/MarketingLayout";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Route element={<MarketingLayout />}>
         <Route path="/" element={<Home />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }
