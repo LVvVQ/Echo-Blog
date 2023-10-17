@@ -74,3 +74,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: "font-heading";
+  src: url("./assets/fonts/YunDuoAiChiMianHuaTang-2.ttf");
+}
+
+@font-face {
+  font-family: "font-sans";
+  src: url("./assets/fonts//Inter-VariableFont.ttf");
+}
