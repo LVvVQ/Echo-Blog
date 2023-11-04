@@ -10,6 +10,8 @@ import RequireAuth from "@/components/RequireAuth";
 import DashboardLayout from "@/layouts/DashboardLayout";
 import SignUpLayout from "@/layouts/SignUpLayout";
 import SignUp from "@/pages/SignUp";
+import EditorLayout from "@/layouts/EditorLayout";
+import EditorPage from "@/pages/Editor";
 
 function App() {
   return (
@@ -30,6 +32,9 @@ function App() {
         <Route element={<RequireAuth allowedRoles={["ROLE_USER", "ROLE_ADMIN"]} />}>
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashBoard />} />
+          </Route>
+          <Route path="/editor" element={<EditorLayout />}>
+            <Route path=":postId" element={<EditorPage />} />
           </Route>
         </Route>
 

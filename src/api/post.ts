@@ -25,3 +25,18 @@ export async function reqDeletePost(uid: number) {
   const res = await requests.delete<any, Response<null>>(`/api/posts/${uid}`);
   throwError(res);
 }
+
+export async function reqGetPostByid(id: number) {
+  const res = await requests.get<any, Response<Post>>(`/api/posts/${id}`);
+  throwError(res);
+  return res.data;
+}
+
+export async function reqUpdatePost(post: Post) {
+  const res = await requests.patch<any, Response<Post>>(
+    `/api/posts/${post.id}`,
+    post,
+  );
+  throwError(res);
+  return res.data;
+}

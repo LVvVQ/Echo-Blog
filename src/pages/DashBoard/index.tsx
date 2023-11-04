@@ -25,7 +25,7 @@ export default function Dashboard() {
         <div>
           {posts?.length ? (
             <div className="divide-y divide-border rounded-md border">
-              {posts.map((post) => (
+              {posts.sort((a,b)=>(new Date(b.updatedAt as string).getTime() - new Date(a.updatedAt as string).getTime())).map((post) => (
                 <PostItem key={post.id} post={post} />
               ))}
             </div>

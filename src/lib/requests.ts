@@ -46,7 +46,7 @@ requests.interceptors.response.use(
           console.log("login expired");
           toast({
             title: "Login expired",
-            description: "Please login again",
+            description: "🙃 Please login again",
             variant: "destructive",
           });
           logout();
@@ -58,14 +58,14 @@ requests.interceptors.response.use(
       case 403:
         toast({
           title: "Forbidden",
-          description: "Access denied",
+          description: "🙃 Access denied",
           variant: "destructive",
         });
         return response.data;
       case 500:
         toast({
           title: "Server Busy",
-          description: "Please try again later",
+          description: "🙃 Please try again later",
           variant: "destructive",
         });
         return response.data;

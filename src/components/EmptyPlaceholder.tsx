@@ -11,7 +11,7 @@ export default function EmptyPlaceholder({
   return (
     <div
       className={cn(
-        "bborder-dashed flex min-h-[400px] flex-col items-center justify-center rounded-md border p-8 text-center animate-in fade-in-50",
+        "border-dashed flex min-h-[400px] flex-col items-center justify-center rounded-md border p-8 text-center animate-in fade-in-50",
         className
       )}
       {...props}

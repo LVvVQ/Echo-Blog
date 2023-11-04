@@ -2,7 +2,7 @@ import { IconType } from "react-icons"
 import { FiMoon, FiSun, FiUser, FiChevronLeft } from "react-icons/fi"
 import { GiDragonHead } from "react-icons/gi"
 import { ImGithub, ImSpinner2 } from "react-icons/im"
-import { LuLaptop2, LuArrowRight, LuFileText, LuCreditCard, LuSettings, LuPlus, LuMoreVertical, LuTrash } from "react-icons/lu"
+import { LuLaptop2, LuArrowRight, LuFileText, LuCreditCard, LuSettings, LuPlus, LuMoreVertical, LuTrash, LuAlertTriangle } from "react-icons/lu"
 import { MdClose } from "react-icons/md"
 
 export type Icon = IconType
@@ -24,4 +24,5 @@ export const Icons = {
   add: LuPlus,
   ellipsis: LuMoreVertical,
   trash: LuTrash,
+  warning: LuAlertTriangle
 }

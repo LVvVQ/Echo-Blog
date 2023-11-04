@@ -2,6 +2,7 @@ import { ButtonProps, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Icons } from "@/components/Icons";
 import usePost from "@/hooks/usePost";
+import { useNavigate } from "react-router-dom";
 
 interface PostCreateButtonProps extends ButtonProps { }
 
@@ -11,9 +12,16 @@ export default function PostCreateButton({
   ...props
 }: PostCreateButtonProps) {
   const { addMutation } = usePost();
+  const navigate = useNavigate();
 
   async function onClick() {
-    await addMutation.mutateAsync({ title: "Untitled Post" });
+    const post = await addMutation.mutateAsync({ title: "Untitled Post" });
+
+    if (addMutation.isError) {
+      return;
+    }
+
+    navigate(`/editor/${post.id}`);
   }
 
   return (
@@ -32,7 +40,7 @@ export default function PostCreateButton({
       ) : (
         <Icons.add className="mr-2 h-4 w-4" />
       )}
-      New post
+      New <span className="hidden md:inline-block">&ensp;post</span>
     </button>
   );
 }

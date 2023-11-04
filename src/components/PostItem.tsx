@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { formatDate } from "@/lib/utils"
 
 interface PostItemProps {
-  post: Pick<Post, "id" | "title" | "published" | "createdAt">
+  post: Pick<Post, "id" | "title" | "published" | "createdAt" | "updatedAt">
 }
 
 export default function PostItem({post}: PostItemProps) {
@@ -16,7 +16,7 @@ export default function PostItem({post}: PostItemProps) {
           {post.title}
         </Link>
         <div>
-          <p className="text-sm text-muted-foreground">{formatDate(post?.createdAt as string) }</p>
+          <p className="text-sm text-muted-foreground">{formatDate(post?.updatedAt as string) }</p>
         </div>
       </div>
       <PostOperations post={{id: post.id, title: post.title}} />

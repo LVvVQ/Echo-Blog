@@ -43,7 +43,7 @@ export default function UserAuthForm({
     if (res.code !== 200) {
       console.log("login failed")
       return toast({
-        title: "Login failed!",
+        title: "🙃 Login failed!",
         description: "Please check your username&password and try again.",
         variant: "destructive",
       })
